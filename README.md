@@ -1,24 +1,49 @@
-Face Recognition and Emotion Detection
-Project Overview
-This project focuses on detecting human emotions through facial expressions using a Convolutional Neural Network (CNN) classifier. Leveraging the FER-2013 dataset, the model is trained to recognize various emotions, including happiness, sadness, surprise, anger, and more.
+# Facial Recognition and Emotion Detection
+----------
+ <img src="./Test_Images/demo.jpeg" alt="index1"/>
+----------
 
-Key Features
-Dataset: The model is trained on the FER-2013 dataset, which consists of 35,887 grayscale images of faces, labeled with seven different emotions.
+### Emotion Detection
+<!-- My name is dhruv chavda
+contact :-dhruvchavda447@gmail.com -->
+Humans are used to non verbal communication. The emotions expressed increases the clarity of any thoughts and ideas. It becoms quite interesting when a computer can capture this complex feature of humans, ie emotions. This topic talks about building a model which can detect an emotion from an image. There key points to be followed are:
 
-Model Architecture:
+1. Data gathering and  augmentation
 
-Utilized Keras with a TensorFlow backend to build and train the CNN classifier.
-Achieved a maximum accuracy of 60.1% during training, demonstrating the model's ability to generalize emotion recognition from facial expressions.
-Face Detection:
+   The dataset taken was **"fer2013"**. It can be downloaded through the link "https://github.com/npinto/fer2013". Image augmentation was performed on this data.
 
-Integrated OpenCV to detect faces within images. The face detection process ensures that only relevant facial data is passed to the classifier, improving the accuracy of emotion predictions.
-Emotion Prediction:
+2. Model building
 
-Once a face is detected, the cropped facial image is processed and fed into the trained CNN model to predict the emotion of the individual.
-Technical Stack
-Programming Languages: Python
-Libraries Used:
-Keras: For building and training the CNN model.
-TensorFlow: As the backend for Keras, enabling efficient computation.
-OpenCV: For face detection in images.
-NumPy: For numerical operations on image data.
+   The model architecture consists of CNN Layer, Max Pooling, Flatten and Dropout Layers.
+
+3. Training
+
+   The model was trained  by  using variants of above layers mentioned in model building and by varying hyperparameters. The best model was able to achieve 60.1% of validation accuracy.
+
+4. Testing
+
+   The model was tested with sample images. It can be seen below:
+
+   <img src="./Test_Images/happy.jpg" alt="index1" height="300px"/>
+   <img src="./Test_Images/neutral.jpg" alt="index2" height="300px"/>
+    <img src="./Test_Images/suprise.jpg" alt="index3" height="300px"/>
+
+#### The model will be able to detect 7 types of emotions:-
+ #####  Angry , Sad ,  Neutral ,  Disgust ,  Surprise ,  Fear  , and   Happy
+
+## Usage:
+
+### For  Face Detection, and Emotion Detection Code
+
+Refer to the notebook /Emotion_Detection.ipynb.<br/>
+I have trained an emotion detection model and put its trained weights at /Models
+
+### Train your Emotion Detection Model
+To train your own emotion detection model, Refer to the notebook /facial_emotion_recognition.ipynb
+
+### For Emotion Detection  using Webcam 
+#### Clone the repo:
+Run `pip install -r requirements.txt` <br/>
+` python Emotion_Detection.py`
+
+
